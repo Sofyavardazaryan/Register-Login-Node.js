@@ -5,5 +5,19 @@
     "age": "30",
     "email": "vardazaryansofia123@gmail.com",
     "password": "$2b$10$sSJ.ozvt9gpVNpSFiDQIKeEQTIecqqto/34Tp5KVm2URUM88M84lu"
+  },
+  {
+    "id": 1779265781664,
+    "name": "Ani",
+    "age": "23",
+    "email": "ani@gmail.com",
+    "password": "$2b$10$s1XU1pVqr4lHUxiEaqTbPeT0kkbDXHoUEn29EtUgQmtBftTX.WUjy"
+  },
+  {
+    "id": 1779265828411,
+    "name": "Ani",
+    "age": "23",
+    "email": "svt@gmail.com",
+    "password": "$2b$10$WFFkShSzEPoYxWiyFOiQ8e8C6jFmtuFX1tD1m7n8TKrtR5QaIU6qW"
   }
 ]

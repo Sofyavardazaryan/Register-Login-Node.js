@@ -1,4 +1,5 @@
 const bcrypt = require("bcryptjs");
+const userSchema = require("../schema/userschema");
 const { getUsers, saveUsers } = require("../models/userModel");
 
 class AuthController {
@@ -11,41 +12,44 @@ class AuthController {
   }
 
   async register(req, res) {
-    const { name, age, email, password } = req.body;
-    if (!name || !age || !email || !password) {
-      return res.send("All fields required");
-    }
-    const users = getUsers();
-    const emailExists = users.find((user) => user.email === email);
-    if (emailExists) {
-      return res.send("Email already exists");
+    const { error } = userSchema.validate(req.body);
+    if (error) {
+      return res.send(error.details[0].message);
     }
 
+    const { name, age, email, password } = req.body;
+    const users = getUsers();
+    const exists = users.find((u) => u.email === email);
+    if (exists) {
+      return res.send("Email already exists");
+    }
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = {
+    users.push({
       id: Date.now(),
       name,
       age,
       email,
       password: hashedPassword,
-    };
+    });
 
-    users.push(newUser);
     saveUsers(users);
+
     res.redirect("/login");
   }
 
   async login(req, res) {
     const { email, password } = req.body;
     const users = getUsers();
-    const user = users.find((user) => user.email === email);
+    const user = users.find((u) => u.email === email);
     if (!user) {
       return res.send("User not found");
     }
+
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.send("Wrong password");
     }
+
     req.session.user = user;
     res.redirect("/profile");
   }
