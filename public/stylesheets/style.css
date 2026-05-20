@@ -1,7 +1,7 @@
 body{
   font-family: Arial, sans-serif;
   padding: 40px;
-  background-color: #9c9494;
+  background-color: #e9e1e1;
 }
 
 form{
@@ -14,7 +14,7 @@ form{
 input{
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid gray;
+  border: 1px solid rgb(139, 139, 139);
   border-radius: 5px;
 }
 
