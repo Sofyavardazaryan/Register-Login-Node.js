@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Profile</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
+  <head>
+    <title>Profile</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Welcome <%= user.name %></h1>
 
-<h1>
-  Welcome <%= user.name %>
-</h1>
+    <h2>Age: <%= user.age %></h2>
 
-<h2>
-  Age: <%= user.age %>
-</h2>
-
-<h2>
-  Email: <%= user.email %>
-</h2>
-
-</body>
+    <h2>Email: <%= user.email %></h2>
+  </body>
 </html>

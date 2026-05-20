@@ -1,34 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Login</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-<body>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Login</h1>
 
-<h1>Login</h1>
+    <form action="/login" method="POST">
+      <input type="email" name="email" placeholder="Email" />
 
-<form action="/login" method="POST">
+      <input type="password" name="password" placeholder="Password" />
 
-  <input
-    type="email"
-    name="email"
-    placeholder="Email"
-  >
+      <button>Login</button>
+    </form>
 
-  <input
-    type="password"
-    name="password"
-    placeholder="Password"
-  >
-
-  <button>Login</button>
-
-</form>
-
-<a href="/register">
-  Register
-</a>
-
-</body>
+    <a href="/register"> Register </a>
+  </body>
 </html>
